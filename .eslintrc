@@ -1,0 +1,36 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "react-hooks", "jest"],
+  "extends": ["airbnb", "plugin:@typescript-eslint/recommended"],
+  "rules": {
+    "import/no-unresolved": "off",
+    "import/prefer-default-export": "off",
+    "indent": "off",
+    "@typescript-eslint/indent": ["error", 2],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "react/prop-types": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react/jsx-filename-extension": [
+      "warn",
+      {
+        "extensions": [".jsx", ".tsx"]
+      }
+    ],
+    "comma-dangle": [
+      "error",
+      {
+        "functions": "only-multiline",
+        "objects": "always-multiline"
+      }
+    ]
+  },
+  "globals": {
+    "window": true,
+    "document": true,
+    "localStorage": true
+  },
+  "env": {
+    "browser": true,
+    "jest/globals": true
+  }
+}
