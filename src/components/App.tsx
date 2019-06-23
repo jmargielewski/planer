@@ -1,9 +1,16 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Navbar from './layout/Navbar';
+import Dashboard from './dashboard/Dashboard';
 
 const App = () => (
   <Router>
-    <Route path="/" component={() => <div>hello</div>} />
+    <div className="App">
+      <Navbar />
+      <Switch>
+        <Route path="/" component={Dashboard} />
+      </Switch>
+    </div>
   </Router>
 );
 
