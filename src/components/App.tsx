@@ -2,13 +2,19 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './layout/Navbar';
 import Dashboard from './dashboard/Dashboard';
+import ProjectDetails from './projects/ProjectDetails';
+import SignIn from './auth/SignIn';
+import SignUp from './auth/SignUp';
 
 const App = () => (
   <Router>
     <div className="App">
       <Navbar />
       <Switch>
-        <Route path="/" component={Dashboard} />
+        <Route exact path="/" component={Dashboard} />
+        <Route path="/project/:id" component={ProjectDetails} />
+        <Route path="/signin" component={SignIn} />
+        <Route path="/signup" component={SignUp} />
       </Switch>
     </div>
   </Router>
