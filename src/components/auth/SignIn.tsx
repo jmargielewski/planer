@@ -2,17 +2,17 @@ import React, { Component } from 'react';
 
 class SignIn extends Component {
   state = {
-    emial: '',
+    email: '',
     password: '',
   };
 
-  handleChange = e => {
+  handleChange = (e: any) => {
     this.setState({
       [e.target.id]: e.target.value,
     });
   };
 
-  handleSubmit = e => {
+  handleSubmit = (e: any) => {
     e.preventDefault();
   };
 
@@ -23,11 +23,21 @@ class SignIn extends Component {
           <h5 className="grey-text text-darken-3">Sign In</h5>
           <div className="input-field">
             <label htmlFor="email">Emial</label>
-            <input type="emial" id="email" onChange={this.handleChange} value={} />
+            <input
+              type="email"
+              id="email"
+              onChange={this.handleChange}
+              value={this.state.email}
+            />
           </div>
           <div className="input-field">
             <label htmlFor="password">Password</label>
-            <input type="password" id="password" onChange={this.handleChange} value={} />
+            <input
+              type="password"
+              id="password"
+              onChange={this.handleChange}
+              value={this.state.password}
+            />
           </div>
           <div className="input-field">
             <button className="btn pink lighten-1 z-depth-0">Login</button>

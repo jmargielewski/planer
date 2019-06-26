@@ -6,13 +6,13 @@ class CreateProject extends Component {
     content: '',
   };
 
-  handleChange = e => {
+  handleChange = (e: any) => {
     this.setState({
       [e.target.id]: e.target.value,
     });
   };
 
-  handleSubmit = e => {
+  handleSubmit = (e: any) => {
     e.preventDefault();
   };
 
@@ -23,15 +23,20 @@ class CreateProject extends Component {
           <h5 className="grey-text text-darken-3">Create new project</h5>
           <div className="input-field">
             <label htmlFor="title">Title</label>
-            <input type="text" id="title" onChange={this.handleChange} value={} />
+            <input
+              type="text"
+              id="title"
+              onChange={this.handleChange}
+              value={this.state.title}
+            />
           </div>
           <div className="input-field">
             <label htmlFor="content">Project Content</label>
             <textarea
               name=""
               id="content"
-              cols="30"
-              rows="10"
+              cols={30}
+              rows={10}
               className="materialize-textarea"
             />
           </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProjectDetails = props => {
+const ProjectDetails = (props: any) => {
   return (
     <div className="container section project-details">
       <div className="card z-depth-0">
