@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SignedInLinks from './SignedInLinks';
-import SignedUpLinks from './SignedUpLinks';
+import SignedOutLinks from './SignedOutLinks';
 
 const Navbar = () => {
   return (
@@ -11,7 +11,7 @@ const Navbar = () => {
           Planer
         </Link>
         <SignedInLinks />
-        <SignedUpLinks />
+        <SignedOutLinks />
       </div>
     </nav>
   );

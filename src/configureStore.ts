@@ -2,7 +2,7 @@
 import { compose, createStore, applyMiddleware, Store } from 'redux';
 import reduxThunk from 'redux-thunk';
 import { ApplicationState, reducers } from './store';
-import { InitAction } from './store/layout/types';
+import { InitAction } from './store/auth/types';
 
 declare global {
   interface Window {
