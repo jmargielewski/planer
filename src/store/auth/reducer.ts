@@ -1,11 +1,11 @@
 import { Reducer } from 'redux';
 import { AuthState, InitAction } from './types';
 
-export const initialState: AuthState = {
+export const initState: AuthState = {
   auth: '',
 };
 
-const reducer: Reducer<AuthState> = (state: AuthState = initialState, action) => {
+const authReducer: Reducer<AuthState> = (state: AuthState = initState, action) => {
   switch ((action as InitAction).type) {
     case '@@auth/INIT':
       return { ...state, resolution: action.payload };
@@ -14,4 +14,4 @@ const reducer: Reducer<AuthState> = (state: AuthState = initialState, action) =>
   }
 };
 
-export default reducer;
+export default authReducer;
