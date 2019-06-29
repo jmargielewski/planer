@@ -1,7 +1,13 @@
 import { Action } from 'redux';
 
-export interface ProjectState {
-  project: string;
+interface ProjectState {
+  id: number;
+  title: string;
+  content: string;
+}
+
+export interface ProjectsState {
+  projects: ProjectState[];
 }
 
 export interface InitAction extends Action {
