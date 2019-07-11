@@ -1,16 +1,18 @@
 import { Action } from 'redux';
 
-interface ProjectState {
+export interface Project {
   id: number;
   title: string;
   content: string;
 }
 
 export interface ProjectsState {
-  projects: ProjectState[];
+  projects: Project[];
 }
 
-export interface InitAction extends Action {
-  type: '@@project/INIT';
-  payload: { project: string };
+interface CreateProjectAction extends Action {
+  type: '@@project/CREATE_PROJECT';
+  project: Project;
 }
+
+export type Action = CreateProjectAction;

@@ -1,5 +1,5 @@
 import { Reducer } from 'redux';
-import { ProjectsState, InitAction } from './types';
+import { ProjectsState, Action } from './types';
 
 export const initState: ProjectsState = {
   projects: [
@@ -11,11 +11,11 @@ export const initState: ProjectsState = {
 
 const projectReducer: Reducer<ProjectsState> = (
   state: ProjectsState = initState,
-  action
+  action,
 ) => {
-  switch ((action as InitAction).type) {
-    case '@@project/INIT':
-      return { ...state, resolution: action.payload };
+  switch ((action as Action).type) {
+    case '@@project/CREATE_PROJECT':
+      return { projects: [...state.projects, action.payload] };
     default:
       return state;
   }
