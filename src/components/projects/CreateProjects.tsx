@@ -23,7 +23,7 @@ class CreateProject extends Component<Props> {
   private handleSubmit = (e: any) => {
     e.preventDefault();
     const { createProject } = this.props;
-    createProject({ id: 1, ...this.state });
+    createProject(this.state);
   };
 
   public render() {

@@ -1,7 +1,6 @@
 import { Action } from 'redux';
 
 export interface Project {
-  id: number;
   title: string;
   content: string;
 }
