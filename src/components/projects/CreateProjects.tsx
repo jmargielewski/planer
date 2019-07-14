@@ -1,22 +1,32 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Project } from '../../store/project/types';
 
-class CreateProject extends Component {
-  state = {
+import * as actions from '../../store/project/actions';
+
+interface Props {
+  createProject: (project: Project) => {};
+}
+
+class CreateProject extends Component<Props> {
+  public state = {
     title: '',
     content: '',
   };
 
-  handleChange = (e: any) => {
+  private handleChange = (e: any) => {
     this.setState({
       [e.target.id]: e.target.value,
     });
   };
 
-  handleSubmit = (e: any) => {
+  private handleSubmit = (e: any) => {
     e.preventDefault();
+    const { createProject } = this.props;
+    createProject({ id: 1, ...this.state });
   };
 
-  render() {
+  public render() {
     return (
       <div className="container">
         <form onSubmit={this.handleSubmit} className="white">
@@ -33,15 +43,17 @@ class CreateProject extends Component {
           <div className="input-field">
             <label htmlFor="content">Project Content</label>
             <textarea
-              name=""
               id="content"
+              onChange={this.handleChange}
               cols={30}
               rows={10}
               className="materialize-textarea"
             />
           </div>
           <div className="input-field">
-            <button className="btn pink lighten-1 z-depth-0">Create</button>
+            <button type="submit" className="btn pink lighten-1 z-depth-0">
+              Create
+            </button>
           </div>
         </form>
       </div>
@@ -49,4 +61,7 @@ class CreateProject extends Component {
   }
 }
 
-export default CreateProject;
+export default connect(
+  null,
+  actions,
+)(CreateProject);

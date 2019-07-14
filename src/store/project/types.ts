@@ -8,11 +8,17 @@ export interface Project {
 
 export interface ProjectsState {
   projects: Project[];
+  error: string;
 }
 
 interface CreateProjectAction extends Action {
   type: '@@project/CREATE_PROJECT';
-  project: Project;
+  payload: Project;
 }
 
-export type Action = CreateProjectAction;
+interface CreateProjectActionError extends Action {
+  type: '@@project/CREATE_PROJECT_ERROR';
+  payload: any;
+}
+
+export type Action = CreateProjectAction | CreateProjectActionError;

@@ -7,6 +7,7 @@ export const initState: ProjectsState = {
     { id: 2, title: 'collect all the starts', content: 'blah blah blah' },
     { id: 3, title: 'egg hunt with me', content: 'blah blah blah' },
   ],
+  error: '',
 };
 
 const projectReducer: Reducer<ProjectsState> = (
@@ -15,7 +16,9 @@ const projectReducer: Reducer<ProjectsState> = (
 ) => {
   switch ((action as Action).type) {
     case '@@project/CREATE_PROJECT':
-      return { projects: [...state.projects, action.payload] };
+      return { ...state, projects: [...state.projects, action.payload] };
+    case '@@project/CREATE_PROJECT_ERROR':
+      return { ...state, error: action.payload };
     default:
       return state;
   }
